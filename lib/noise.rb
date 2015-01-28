@@ -1,0 +1,2 @@
+class Noise
+end
