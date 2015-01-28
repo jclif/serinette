@@ -1,8 +1,9 @@
 require 'instrument'
 
 describe Instrument do
+
   subject(:instrument) { Instrument.new() }
 
-  it "should have an orchestrate method"
+  it "should generate a noise"
 
 end

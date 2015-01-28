@@ -1,6 +1,7 @@
 require 'song'
 
 describe Song do
+
   subject(:song) { Song.new() }
 
   it "should have an orchestrate method"
