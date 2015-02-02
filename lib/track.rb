@@ -6,6 +6,10 @@ class Track
     @noise = getNoise
   end
 
+  def render
+    return @noise.render
+  end
+
   private
 
   def getNoise

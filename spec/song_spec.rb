@@ -4,7 +4,7 @@ describe Song do
 
   subject(:song) { Song.new() }
 
-  it "should have an orchestrate method"
+  it "should have an orchestrate method that creates a new wav file"
 
   it "should have a variable duration" do
     expect(song.duration).to be_a Fixnum
