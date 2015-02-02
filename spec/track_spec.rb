@@ -8,7 +8,7 @@ describe Track do
     expect(track.noise).to be_a Noise
   end
 
-  it "should have a method render that: creates temporary wav file; returns name" do
+  it "should have a method render that creates a temporary wav file and returns the path" do
     file_name = track.render
     expect(File.exist?(file_name)).to be true
   end

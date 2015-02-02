@@ -26,35 +26,36 @@ describe Song do
     expect(song.tracks).to be_a Array
   end
 
-  it "should have one track" do
-    expect(song.tracks.length).to be 1
-    expect(song.tracks.first).to be_a Track
+  it "should have correct number of tracks" do
+    expect(song.tracks.length).to be Song::TRACK_NUM
+    song.tracks.each do |track|
+      expect(track).to be_a Track
+    end
   end
 
+  it "should exist" do
+    expect(Song.method_defined?(:orchestrate)).to be true
+  end
 
-  describe "a method orchestrate" do
+  it "should have a class variable called SAMPLES_PER_BUFFER" do
+    expect(Song::SAMPLES_PER_BUFFER).not_to be_nil
+  end
 
-    it "should exist" do
-      expect(Song.method_defined?(:orchestrate)).to be true
+  it "should have a class variable called OUTPUT_FILE_NAME" do
+    expect(Song::OUTPUT_FILE_NAME).not_to be_nil
+  end
+
+  it "should call render on all tracks" do
+    song.tracks.each do |track|
+      expect(track).to receive(:render)
     end
 
-    it "should call render on all tracks" do
-      song.tracks.each do |track|
-        expect(track).to receive(:render)
-      end
+    song.render
+  end
 
-      song.orchestrate
-    end
-
-    it "should set a variable wavefile with merge track wavefiles" do
-      song.orchestrate
-      expect(song.respond_to?(:wavefile)).to be true
-      expect(song.wavefile).not_to be_nil
-    end
-
-    it "should set a variable wavefile with merge track wavefiles" do
-    end
-
+  it "should output a file" do
+    song.orchestrate
+    expect(File.exist?(Song::OUTPUT_FILE_NAME)).to be true
   end
 
 end

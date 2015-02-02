@@ -1,11 +1,15 @@
 require 'wavefile'
+require 'fileutils'
+
 include WaveFile
 
 class Song
 
   SAMPLES_PER_BUFFER = 4096
+  OUTPUT_FILE_NAME = 'tmp/output.wav'
+  TRACK_NUM = 2
 
-  attr_accessor :duration, :tracks, :wavefile
+  attr_accessor :duration, :tracks
 
   def initialize
     setDuration
@@ -13,22 +17,23 @@ class Song
   end
 
   def orchestrate
-    track_files = @tracks.map do |track|
-      track.render
-    end
+    clean
+    track_files = render
 
-    song_wavefile_name = 'tmp/song_name.wav'
-
-    Writer.new(song_wavefile_name, Format.new(:stereo, :pcm_16, 44100)) do |writer|
+    puts track_files.inspect
+    Writer.new(OUTPUT_FILE_NAME, Format.new(:stereo, :pcm_16, 44100)) do |writer|
       track_files.each do |file_name|
-        puts file_name
         Reader.new(file_name).each_buffer(SAMPLES_PER_BUFFER) do |buffer|
           writer.write(buffer)
         end
       end
     end
+  end
 
-    @wavefile = song_wavefile_name
+  def render
+    @tracks.map do |track|
+      track.render
+    end
   end
 
   private
@@ -41,7 +46,15 @@ class Song
   end
 
   def setTracks
-    @tracks = [Track.new]
+    @tracks = []
+    TRACK_NUM.times do |i|
+      @tracks << Track.new
+    end
+  end
+
+  def clean
+    dir_path = 'tmp'
+    FileUtils.rm_rf("#{dir_path}/.", secure: true)
   end
 
 end
