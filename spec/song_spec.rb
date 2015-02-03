@@ -5,7 +5,7 @@ describe Song do
 
   describe 'The Class' do
     it 'should have a variable called OUTPUT_FILE_NAME' do
-      expect(Song::OUTPUT_FILE_NAME).to be_nil
+      expect(Song::OUTPUT_FILE_NAME).not_to be_nil
     end
 
     it 'should have a variable called TRACK_NUM' do
