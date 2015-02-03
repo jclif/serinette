@@ -4,5 +4,6 @@ gem 'thor'
 gem 'cliver'
 gem 'ruby-sox'
 
+gem 'rake'
 gem 'bundler'
 gem 'rspec'
