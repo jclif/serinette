@@ -1,5 +1,4 @@
 require 'noise'
-require 'wavefile'
 
 describe Noise do
 

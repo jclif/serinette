@@ -4,6 +4,10 @@ gem 'thor'
 gem 'cliver'
 gem 'ruby-sox'
 
+group :development, :test do
+  gem 'debugger'
+end
+
 group :development do
   gem 'bundler'
 end

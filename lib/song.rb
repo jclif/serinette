@@ -1,20 +1,23 @@
 require 'sox'
 require 'fileutils'
 
-include WaveFile
-
 class Song
+  LOWEST_DURATION = 60
+  HIGHEST_DURATION = 180
 
   OUTPUT_FILE_NAME = 'tmp/output.wav'
-  TRACK_NUM        = 2
   CHANNELS         = 2
-  RATE             = 44100
+  RATE             = 99600
 
-  attr_accessor :duration, :tracks
+  TRACK_NUM        = 2
+  EFFECT_NUM       = 1
+
+  attr_accessor :duration, :tracks, :effects
 
   def initialize
     setDuration
     setTracks
+    setEffects
   end
 
   def orchestrate
@@ -27,13 +30,12 @@ class Song
     # build sox command
     sox = Sox::Cmd.new(:combine => :mix)
 
-    puts track_files.inspect
     track_files.each do |file|
       sox.add_input(file)
     end
 
     sox.set_output(OUTPUT_FILE_NAME)
-    sox.set_effects(rate: RATE, channels: CHANNELS)
+    sox.set_effects(rate: RATE, channels: CHANNELS, effects[0].type => true)
 
     # execute command
     sox.run
@@ -48,10 +50,11 @@ class Song
   private
 
   def setDuration
-    @lowest_duration = 60
-    @highest_duration = 180
+    @duration = (LOWEST_DURATION..HIGHEST_DURATION).to_a.sample
+  end
 
-    @duration = (@lowest_duration..@highest_duration).to_a.sample
+  def setEffects
+    @effects = Array.new(EFFECT_NUM) { Effect.new }
   end
 
   def setTracks

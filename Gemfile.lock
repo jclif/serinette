@@ -5,6 +5,13 @@ GEM
       timers (~> 4.0.0)
     cliver (0.3.2)
     coderay (1.1.0)
+    columnize (0.8.9)
+    debugger (1.6.8)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.3.5)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.3.5)
     diff-lcs (1.2.5)
     ffi (1.9.5)
     formatador (0.2.5)
@@ -51,6 +58,7 @@ PLATFORMS
 DEPENDENCIES
   bundler
   cliver
+  debugger
   guard
   guard-rspec
   rspec
