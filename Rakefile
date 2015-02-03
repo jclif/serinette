@@ -9,7 +9,7 @@ RSpec::Core::RakeTask.new(:spec) do |t|
 end
 
 RSpec::Core::RakeTask.new(:travis_spec) do |t|
-  t.fail_on_error = false
+  t.fail_on_error = true
   t.pattern = ARGV[1] || "spec/*_spec.rb"
 end
 
