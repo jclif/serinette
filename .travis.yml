@@ -8,3 +8,4 @@ virtualenv:
   system_site_packages: true
 before_install:
  - sudo apt-get install sox
+script: rake travis_spec
