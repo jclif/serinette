@@ -1,13 +1,14 @@
-require 'wavefile'
+require 'sox'
 require 'fileutils'
 
 include WaveFile
 
 class Song
 
-  SAMPLES_PER_BUFFER = 4096
   OUTPUT_FILE_NAME = 'tmp/output.wav'
-  TRACK_NUM = 2
+  TRACK_NUM        = 2
+  CHANNELS         = 2
+  RATE             = 44100
 
   attr_accessor :duration, :tracks
 
@@ -17,17 +18,25 @@ class Song
   end
 
   def orchestrate
+    # clear tmp dir
     clean
+
+    # get file names from tracks
     track_files = render
 
+    # build sox command
+    sox = Sox::Cmd.new(:combine => :mix)
+
     puts track_files.inspect
-    Writer.new(OUTPUT_FILE_NAME, Format.new(:stereo, :pcm_16, 44100)) do |writer|
-      track_files.each do |file_name|
-        Reader.new(file_name).each_buffer(SAMPLES_PER_BUFFER) do |buffer|
-          writer.write(buffer)
-        end
-      end
+    track_files.each do |file|
+      sox.add_input(file)
     end
+
+    sox.set_output(OUTPUT_FILE_NAME)
+    sox.set_effects(rate: RATE, channels: CHANNELS)
+
+    # execute command
+    sox.run
   end
 
   def render
@@ -46,15 +55,11 @@ class Song
   end
 
   def setTracks
-    @tracks = []
-    TRACK_NUM.times do |i|
-      @tracks << Track.new
-    end
+    @tracks = Array.new(TRACK_NUM) { Track.new }
   end
 
   def clean
-    dir_path = 'tmp'
-    FileUtils.rm_rf("#{dir_path}/.", secure: true)
+    FileUtils.rm_rf("./tmp/**/*", secure: true)
   end
 
 end

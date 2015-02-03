@@ -2,15 +2,27 @@ require 'song'
 
 describe Song do
 
-  describe 'the song class' do
-    it 'should have a variable called samples_per_buffer' do
-      expect(Song::SAMPLES_PER_BUFFER).not_to be_nil
+  describe 'The Class' do
+    it 'should have a variable called OUTPUT_FILE_NAME' do
+      expect(Song::OUTPUT_FILE_NAME).not_to be_nil
+    end
+
+    it 'should have a variable called TRACK_NUM' do
+      expect(Song::TRACK_NUM).not_to be_nil
+    end
+
+    it 'should have a variable called CHANNELS' do
+      expect(Song::CHANNELS).not_to be_nil
+    end
+
+    it 'should have a variable called RATE' do
+      expect(Song::RATE).not_to be_nil
     end
   end
 
   subject(:song) { Song.new() }
 
-  it "should have a variable duration" do
+  it "should have a variable duration stuff" do
     expect(song.duration).to be_a Fixnum
   end
 
@@ -35,14 +47,6 @@ describe Song do
 
   it "should exist" do
     expect(Song.method_defined?(:orchestrate)).to be true
-  end
-
-  it "should have a class variable called SAMPLES_PER_BUFFER" do
-    expect(Song::SAMPLES_PER_BUFFER).not_to be_nil
-  end
-
-  it "should have a class variable called OUTPUT_FILE_NAME" do
-    expect(Song::OUTPUT_FILE_NAME).not_to be_nil
   end
 
   it "should call render on all tracks" do

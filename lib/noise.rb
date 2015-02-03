@@ -1,5 +1,3 @@
-require 'wavefile'
-
 class Noise
 
   SOUND_DIRECTORY = './sounds/*'
