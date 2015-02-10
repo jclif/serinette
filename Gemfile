@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
 
+gem 'bundler'
+gem 'rake'
+
 gem 'thor'
 gem 'cliver'
 gem 'ruby-sox'
 
-gem 'rake'
-gem 'bundler'
 gem 'rspec'
 gem 'coveralls'
+gem "codeclimate-test-reporter"
