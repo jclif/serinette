@@ -8,6 +8,5 @@ gem 'cliver'
 gem 'ruby-sox'
 
 gem 'rspec'
-gem 'debugger'
 gem 'coveralls'
 gem "codeclimate-test-reporter"
