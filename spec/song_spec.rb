@@ -8,12 +8,12 @@ describe Song do
       expect(Song::OUTPUT_FILE_NAME).not_to be_nil
     end
 
-    it 'should have a variable called TRACK_NUM' do
-      expect(Song::TRACK_NUM).not_to be_nil
+    it 'should have a variable called TRACK_NUMBER' do
+      expect(Song::TRACK_NUMBER).not_to be_nil
     end
 
-    it 'should have a variable called EFFECT_NUM' do
-      expect(Song::EFFECT_NUM).not_to be_nil
+    it 'should have a variable called EFFECT_NUMBER' do
+      expect(Song::EFFECT_NUMBER).not_to be_nil
     end
 
     it 'should have a variable called CHANNELS' do
@@ -28,11 +28,11 @@ describe Song do
   subject(:song) { Song.new() }
 
   it "should have correct number of effects" do
-    expect(song.effects.length).to be Song::EFFECT_NUM
+    expect(song.effects.length).to be Song::EFFECT_NUMBER
   end
 
   it "should have correct number of tracks" do
-    expect(song.tracks.length).to be Song::TRACK_NUM
+    expect(song.tracks.length).to be Song::TRACK_NUMBER
   end
 
   it "should have a variable duration" do
@@ -56,7 +56,7 @@ describe Song do
   end
 
   it "should have correct number of tracks" do
-    expect(song.tracks.length).to be Song::TRACK_NUM
+    expect(song.tracks.length).to be Song::TRACK_NUMBER
     song.tracks.each do |track|
       expect(track).to be_a Track
     end

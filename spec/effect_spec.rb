@@ -5,14 +5,8 @@ describe Effect do
 
   subject(:effect) { Effect.new() }
 
-  context 'The Class' do
-    it 'should have a variable called TYPES' do
-      expect(Effect::TYPES).not_to be_nil
-    end
-  end
-
-  it "should have a type" do
-    expect(effect.type).to be_a(String)
+  it "should have a method #to_sox_key_pair" do
+    effect.should respond_to :to_sox_key_pair
   end
 
 end
