@@ -15,7 +15,6 @@ describe Descendents do
       class Subklass2 < klass; end
       expect(klass.descendents - [Subklass1, Subklass2]).to eq []
     end
-
   end
 
  end
