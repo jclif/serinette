@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'noise'
+require 'serinette/noise'
 
 describe Noise do
 
