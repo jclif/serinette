@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'mixins/descendents'
 
 describe Descendents do
 

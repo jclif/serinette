@@ -1,13 +1,8 @@
 require 'spec_helper'
-require 'song'
 
 describe Song do
 
-  describe 'The Class' do
-    it 'should have a variable called OUTPUT_FILE_NAME' do
-      expect(Song::OUTPUT_FILE_NAME).not_to be_nil
-    end
-
+  context 'The Class' do
     it 'should have a variable called TRACK_NUMBER' do
       expect(Song::TRACK_NUMBER).not_to be_nil
     end
@@ -62,9 +57,6 @@ describe Song do
     end
   end
 
-  it "should exist" do
-    expect(Song.method_defined?(:orchestrate)).to be true
-  end
 
   it "should call render on all tracks" do
     song.tracks.each do |track|
@@ -72,11 +64,6 @@ describe Song do
     end
 
     song.render
-  end
-
-  it "should output a file" do
-    song.orchestrate
-    expect(File.exist?(Song::OUTPUT_FILE_NAME)).to be true
   end
 
 end

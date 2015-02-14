@@ -1,11 +1,11 @@
-require 'mixins/descendents'
-
 class Effect
 
   include Descendents
 
   def self.get_effects(num)
-    Effect.descendents.sample
+    Array.new(num).map do |el|
+      el = Effect.descendents.sample.new
+    end
   end
 
   def to_sox_key_pair

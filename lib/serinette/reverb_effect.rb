@@ -2,7 +2,7 @@ class ReverbEffect < Effect
   ROOT_COMMAND = 'reverb'
 
   def get_options
-    return true
+    return '-w'
   end
 
   def get_root_command
