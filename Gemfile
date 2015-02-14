@@ -2,11 +2,13 @@ source 'https://rubygems.org'
 
 gem 'bundler'
 gem 'rake'
-gem 'byebug'
 
 # code quality
-gem 'rubocop'
-gem 'inch'
+group :production do
+  gem 'rubocop'
+  gem 'inch'
+  gem 'byebug'
+end
 
 # testing
 gem 'rspec'

@@ -17,6 +17,7 @@ addons:
     repo_token: e470e0610710700b03b559ceb7cbe2972d02735cc687a4dd6c2dac6f86fc4950
 virtualenv:
   system_site_packages: true
+bundler_args: --without development
 before_install:
   - sudo apt-get install sox
 after_success:
