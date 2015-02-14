@@ -3,17 +3,17 @@ source 'https://rubygems.org'
 gem 'bundler'
 gem 'rake'
 
-# code quality
 group :production do
   gem 'rubocop'
   gem 'inch'
   gem 'byebug'
 end
 
-# testing
-gem 'rspec'
-gem 'coveralls'
-gem 'codeclimate-test-reporter'
+group :test do
+  gem 'rspec'
+  gem 'coveralls'
+  gem 'codeclimate-test-reporter'
+end
 
 gem 'thor'
 gem 'cliver'
