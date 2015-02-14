@@ -1,7 +1,6 @@
-# why wont you work?!
-# os:
-#   - linux
-#   - osx
+os:
+  - linux
+  - osx
 language: ruby
 rvm:
   - 2.0.0
