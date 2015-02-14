@@ -4,7 +4,11 @@ gem 'bundler'
 gem 'rake'
 gem 'byebug'
 
+# code quality
+gem 'rubocop'
 gem 'inch'
+
+# testing
 gem 'rspec'
 gem 'coveralls'
 gem "codeclimate-test-reporter"

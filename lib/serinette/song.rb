@@ -26,7 +26,7 @@ class Song
       sox.add_input(file)
     end
     sox.set_effects(get_effects)
-    sox.set_output(Serinette::OUTPUT_FILE_NAME)
+    sox.set_output(Serinette.get_output_path)
   end
 
   private
