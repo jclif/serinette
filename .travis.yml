@@ -1,6 +1,7 @@
-os:
-  - linux
-  - osx
+# still in beta
+# os:
+#   - linux
+#   - osx
 language: ruby
 rvm:
   - 2.0.0

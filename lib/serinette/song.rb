@@ -17,10 +17,14 @@ class Song
     init_effects
   end
 
+  # Recurses render tree via render
   def render
     @tracks.map(&:render)
   end
 
+  # Taks a sox instance and adds input, sets effects, and sets output
+  #
+  # @param sox [Sox::Cmd] Sox command instance
   def configure_command(sox)
     render.each do |file|
       sox.add_input(file)
@@ -31,6 +35,8 @@ class Song
 
   private
 
+  # Uses effects instance variable to generate hash of all effects as sox
+  # key/pairs
   def generate_effects_options
     effects_hash = { rate: RATE, channels: CHANNELS }
     @effects.each do |effect|
@@ -38,14 +44,17 @@ class Song
     end
   end
 
+  # Initializes duration
   def init_duration
     @duration = (LOWEST_DURATION..HIGHEST_DURATION).to_a.sample
   end
 
+  # Initializes tracks
   def init_tracks
     @tracks = Array.new(TRACK_NUMBER) { Track.new }
   end
 
+  # Initializes effects
   def init_effects
     @effects = Effect.sample_effects_classes(1)
   end
