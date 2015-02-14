@@ -1,12 +1,12 @@
+# Reverb type of effect
 class ReverbEffect < Effect
   ROOT_COMMAND = 'reverb'
 
-  def get_options
-    return '-w'
+  def generate_options
+    '-w'
   end
 
-  def get_root_command
-    return ROOT_COMMAND
+  def return_root_command
+    ROOT_COMMAND
   end
-
 end

@@ -11,7 +11,7 @@ gem 'inch'
 # testing
 gem 'rspec'
 gem 'coveralls'
-gem "codeclimate-test-reporter"
+gem 'codeclimate-test-reporter'
 
 gem 'thor'
 gem 'cliver'

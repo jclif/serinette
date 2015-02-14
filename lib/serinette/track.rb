@@ -1,19 +1,19 @@
+# Contains noise, efects on noise, and when (timestamps) and
+# how (volume) noise is played
 class Track
-
   attr_accessor :noise
 
   def initialize
-    @noise = getNoise
+    @noise = init_noise
   end
 
   def render
-    return @noise.render
+    @noise.render
   end
 
   private
 
-  def getNoise
-    return Noise.new
+  def init_noise
+    Noise.new
   end
-
 end
