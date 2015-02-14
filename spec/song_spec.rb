@@ -41,7 +41,7 @@ describe Song do
     expect(song.duration).to be >= 60
   end
 
-  it 'mshould have tracks' do
+  it 'should have tracks' do
     expect(song.tracks).to be_a Array
   end
 
