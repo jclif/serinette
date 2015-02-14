@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'bundler'
 gem 'rake'
 
-group :production do
+group :development do
   gem 'rubocop'
   gem 'inch'
   gem 'byebug'
