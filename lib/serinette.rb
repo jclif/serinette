@@ -22,6 +22,11 @@ module Serinette
   end
 
   def self.orchestrate
+  # Adds two numbers together, returning their sum.
+  #
+  # @param one [Fixnum] First number to add
+  # @param two [Fixnum] Second number to add
+  # @return [Fixnum] Sum of the two arguments
     clean
 
     sox = Sox::Cmd.new(:combine => :mix)

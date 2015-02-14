@@ -4,7 +4,6 @@ class Song
   TRACK_NUMBER     = 2
   EFFECT_NUMBER    = 1
 
-  OUTPUT_FILE_NAME = 'tmp/output.wav'
   CHANNELS         = 2
   RATE             = 99600
 
