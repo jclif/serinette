@@ -1,6 +1,3 @@
-begin
-  require 'byebug'
-end
 require 'fileutils'
 require 'sox'
 
