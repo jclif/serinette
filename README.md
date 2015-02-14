@@ -84,7 +84,7 @@ You can also support my work on Serinette and
 [all my other projects](https://github.com/jclif) via
 [gratipay](https://www.gratipay.com/jclif), but why would you ever want to.
 
-[![Support via Gratipay](//img.shields.io/gratipay/jclif.svg)](https://gratipay.com/jclif/)
+[![Support via Gratipay](http://img.shields.io/gratipay/jclif.svg)](https://gratipay.com/jclif/)
 
 ## Mailing List
 
