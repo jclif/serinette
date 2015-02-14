@@ -1,5 +1,7 @@
+begin
+  require 'byebug'
+end
 require 'fileutils'
-require 'byebug'
 require 'sox'
 
 require 'mixins/descendents'
