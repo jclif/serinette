@@ -5,7 +5,7 @@ describe Descendents do
 
   context 'a class method #descendents' do
     it 'should exist in classes which include the module' do
-      klass.should respond_to :descendents
+      expect(klass).to respond_to(:descendents)
     end
 
     it 'should return a classes descendents' do

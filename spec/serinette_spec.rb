@@ -15,7 +15,7 @@ describe Serinette do
 
   context 'a class method #clean' do
     it 'should exist' do
-      Serinette.should respond_to :clean
+      expect(Serinette).to respond_to(:clean)
     end
 
     it 'should remove all wav files from the tmp directory' do
@@ -28,7 +28,7 @@ describe Serinette do
 
   context 'a class method #generate_output_path' do
     it 'should exist' do
-      Serinette.should respond_to :generate_output_path
+      expect(Serinette).to respond_to(:generate_output_path)
     end
 
     it 'should get output path' do
@@ -41,7 +41,7 @@ describe Serinette do
 
   context 'a class method #orchestrate' do
     it 'should exist' do
-      Serinette.should respond_to :orchestrate
+      expect(Serinette).to respond_to(:orchestrate)
     end
 
     it 'should output a file' do
