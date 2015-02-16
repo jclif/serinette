@@ -1,3 +1,4 @@
+require 'byebug'
 require 'fileutils'
 require 'sox'
 
@@ -9,6 +10,7 @@ require 'serinette/reverb_effect'
 
 require 'serinette/noise'
 require 'serinette/synth_noise'
+require 'serinette/source_noise'
 
 require 'serinette/song'
 require 'serinette/track'

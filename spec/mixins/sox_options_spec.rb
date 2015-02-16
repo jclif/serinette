@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe SoxOptions do
-
   context 'a method #randomize_effect_options_as_string' do
     it 'should exist' do
       expect(SoxOptions).to respond_to(:randomize_effect_options_as_string)
@@ -32,7 +31,7 @@ describe SoxOptions do
         default: 50
       }
 
-      result =SoxOptions.stringify_option(good_option2)
+      result = SoxOptions.stringify_option(good_option2)
 
       expect(result).not_to be_nil
       expect(result.to_i).to be_between(0, 100)
@@ -44,7 +43,9 @@ describe SoxOptions do
         name: 'wet-only',
         value: '-w'
       }
-      expect{ SoxOptions.stringify_option(bad_option) }.to raise_error(Serinette::Error)
+
+      error = Serinette::Error
+      expect { SoxOptions.stringify_option(bad_option) }.to raise_error(error)
     end
   end
 end

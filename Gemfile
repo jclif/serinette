@@ -15,6 +15,5 @@ group :test do
   gem 'codeclimate-test-reporter'
 end
 
-gem 'thor'
 gem 'cliver'
 gem 'ruby-sox'

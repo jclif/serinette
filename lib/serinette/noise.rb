@@ -1,19 +1,15 @@
 # Most basic unit of sound; will eventually provide base class for many
-# different kinds of noises (SynthNoise, WavefileNoise, etc)
+# different kinds of noises (SynthNoise, SourceNoise, etc)
 class Noise
-  SOUND_DIRECTORY = './sounds/*'
+  include Descendents
 
-  attr_accessor :wavefile
-
-  def initialize
-    sound_files = Dir.glob(SOUND_DIRECTORY).sort
-    num = (0..sound_files.length - 1).to_a.sample
-
-    @wavefile = sound_files[num]
-  end
-
-  def render
-    rendered = @wavefile
-    rendered
+  # Gets a specified number of Noise subclasses.
+  #
+  # @param num [Fixnum] Number of noises
+  # @return [Array] An array of Noise subclasses
+  def self.sample_noise_classes(num = 1)
+    Array.new(num).map do
+      Noise.descendents.sample.new
+    end
   end
 end

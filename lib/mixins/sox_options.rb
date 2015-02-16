@@ -35,8 +35,9 @@ module SoxOptions
     when :flag
       return [true, false].sample ? option[:value] : nil
     when :trait
+      return option[:range].to_a.sample
     else
-      fail Serinette::Error, '#stringify_option requires type = flag/trait'
+      fail Serinette::Error, '#stringify_option requires type of flag or trait'
     end
   end
 end

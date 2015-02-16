@@ -39,9 +39,12 @@ class Song
   # key/pairs
   def generate_effects_options
     effects_hash = { rate: RATE, channels: CHANNELS }
+
     @effects.each do |effect|
       effects_hash.merge! effect.to_sox_key_pair
     end
+
+    effects_hash
   end
 
   # Initializes duration

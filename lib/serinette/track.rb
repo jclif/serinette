@@ -17,6 +17,6 @@ class Track
 
   # Initializes noise
   def init_noise
-    Noise.new
+    Noise.sample_noise_classes.first
   end
 end

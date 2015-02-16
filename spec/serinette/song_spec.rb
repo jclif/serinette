@@ -2,19 +2,19 @@ require 'spec_helper'
 
 describe Song do
   context 'The Class' do
-    it 'should have a variable called TRACK_NUMBER' do
+    it 'should have a constant called TRACK_NUMBER' do
       expect(Song::TRACK_NUMBER).not_to be_nil
     end
 
-    it 'should have a variable called EFFECT_NUMBER' do
+    it 'should have a constant called EFFECT_NUMBER' do
       expect(Song::EFFECT_NUMBER).not_to be_nil
     end
 
-    it 'should have a variable called CHANNELS' do
+    it 'should have a constant called CHANNELS' do
       expect(Song::CHANNELS).not_to be_nil
     end
 
-    it 'should have a variable called RATE' do
+    it 'should have a constant called RATE' do
       expect(Song::RATE).not_to be_nil
     end
   end
