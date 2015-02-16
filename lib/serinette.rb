@@ -2,10 +2,14 @@ require 'fileutils'
 require 'sox'
 
 require 'mixins/descendents'
+require 'mixins/sox_options'
 
 require 'serinette/effect'
 require 'serinette/reverb_effect'
+
 require 'serinette/noise'
+require 'serinette/synth_noise'
+
 require 'serinette/song'
 require 'serinette/track'
 

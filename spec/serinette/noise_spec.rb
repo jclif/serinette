@@ -7,7 +7,7 @@ describe Noise do
     expect(noise.wavefile).to be_a String
   end
 
-  it 'should have method #render that: creates tem wav file and returns name' do
+  it 'should have method #render return post-processed sound file name' do
     file_name = noise.render
     expect(File.exist?(file_name)).to be true
   end

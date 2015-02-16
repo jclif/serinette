@@ -1,6 +1,7 @@
 # Used to get subclasses and generate sox commands
 class Effect
   include Descendents
+  include SoxOptions
 
   # Gets a specified number of Effect subclasses.
   #

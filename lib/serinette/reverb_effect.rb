@@ -3,11 +3,57 @@ class ReverbEffect < Effect
   ROOT_COMMAND = 'reverb'
 
   # Options include:
-  # -w: wet only
-  def generate_options
-    '-w'
-  end
+  # [−w|−−wet-only] [on - off]
+  # reverberance (50%) [0 - 100]
+  # HF-damping (50%) [0 - 100]
+  # room-scale (100%) [0 - 100]
+  # stereo-depth (100%) [0 - 100]
+  # pre-delay (0ms) [0 - 5] TODO dtermine max pre-delay
+  # wet-gain (0dB) [0 - 5] TODO determine max dB
+  SOX_OPTIONS_CONFIG = [
+    {
+      type: :flag,
+      name: 'wet-only',
+      value: '-w'
+    }, {
+      type: :trait,
+      name: 'reverberance',
+      range: (0..100),
+      default: 50
+    }, {
+      type: :trait,
+      name: 'HF-damping',
+      range: (0..100),
+      default: 50
+    }, {
+      type: :trait,
+      name: 'room-scale',
+      range: (0..100),
+      default: 100
+    }, {
+      type: :trait,
+      name: 'stero-depth',
+      range: (0..100),
+      default: 100
+    }, {
+      type: :trait,
+      name: 'pre-delay',
+      range: (0..5),
+      default: 0
+    }, {
+      type: :trait,
+      name: 'wet-gain',
+      range: (0..5),
+      default: 0
+    }
+  ]
 
+  # Passes in the Effect Subclasses config to generate sox option hash
+  #
+  # @return [Hash] Result of randomize_effect_options
+  def generate_options
+    effects = SoxOptions::randomize_effect_options(SOX_OPTIONS_CONFIG)
+  end
   # Sox command
   def return_root_command
     ROOT_COMMAND
