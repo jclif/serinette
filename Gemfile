@@ -1,19 +1,19 @@
 source 'https://rubygems.org'
 
-gem 'bundler'
-gem 'rake'
+gem 'bundler', '1.8.2'
+gem 'rake', '10.4.2'
 
 group :development do
-  gem 'rubocop'
-  gem 'inch'
-  gem 'byebug'
+  gem 'rubocop', '0.29.1'
+  gem 'inch', '0.5.10'
+  gem 'byebug', '3.5.1'
 end
 
 group :test do
-  gem 'rspec'
-  gem 'coveralls'
-  gem 'codeclimate-test-reporter'
+  gem 'rspec', '3.2.0'
+  gem 'coveralls', '0.7.9'
+  gem 'codeclimate-test-reporter', '0.4.6'
 end
 
-gem 'cliver'
-gem 'ruby-sox'
+gem 'cliver', '0.3.2'
+gem 'ruby-sox', '0.0.3'

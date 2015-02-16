@@ -81,14 +81,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler
-  byebug
-  cliver
-  codeclimate-test-reporter
-  coveralls
-  inch
-  rake
-  rspec
-  rubocop
-  ruby-sox
-  thor
+  bundler (= 1.8.2)
+  byebug (= 3.5.1)
+  cliver (= 0.3.2)
+  codeclimate-test-reporter (= 0.4.6)
+  coveralls (= 0.7.9)
+  inch (= 0.5.10)
+  rake (= 10.4.2)
+  rspec (= 3.2.0)
+  rubocop (= 0.29.1)
+  ruby-sox (= 0.0.3)
