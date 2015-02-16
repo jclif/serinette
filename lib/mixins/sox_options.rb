@@ -2,13 +2,40 @@
 module SoxOptions
   # Takes a sox effect config and returns randomized Hash.
   #
-  # @param config [Hash] Sox effect options config
+  # @param config [Array] Sox effect options config
   #
-  # Looks for type of flag or train
-  #
-  # @return [Hash] Randomized effect hash to be used with Sox::Cmd.set_effects
-  def randomize_effect_options(config)
-    config.map do |
+  # @return [string] Randomized effect hash to be used with Sox::Cmd.set_effects
+  def self.randomize_effect_options_as_string(config)
+    config.map do |o|
+      stringify_option(o)
+    end.join(' ')
+  end
 
+  # Takes an individual option and checks for type, (if flag, its either on of
+  # off; if traig, randomize within the range given
+  #
+  # @param option [Option] Sox effect option
+  # Looks like this:
+  #   {
+  #     type: :flag,
+  #     name: 'wet-only',
+  #     value: '-w'
+  #   }
+  # or this:
+  #   {
+  #     type: :trait,
+  #     name: 'reverberance',
+  #     range: (0..100),
+  #     default: 50
+  #   {
+  #
+  # @return [string] Randomized effect hash to be used with Sox::Cmd.set_effects
+  def self.stringify_option(option)
+    case option[:type]
+    when :flag
+    when :trait
+    else
+      fail Serinette::Error, '#stringify_option requires type = flag/trait'
+    end
   end
 end

@@ -43,4 +43,8 @@ module Serinette
 
     sox.run
   end
+
+  # Basic Serinette error:
+  class Error < StandardError
+  end
 end
