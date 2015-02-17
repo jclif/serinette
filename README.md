@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/jclif/serinette.png?label=ready&title=Ready)](https://waffle.io/jclif/serinette)
 # [serinette](http://jclif.github.io/serinette/)
 
 Generates random electronic music from the command line.
