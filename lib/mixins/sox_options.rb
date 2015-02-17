@@ -25,7 +25,7 @@ module SoxOptions
   #   {
   #     type: :trait,
   #     name: 'reverberance',
-  #     range: (0..100),
+  #     range: (0..100), <== this can be an array or range, and it should sample
   #     default: 50
   #   {
   #
@@ -34,7 +34,7 @@ module SoxOptions
     case option[:type]
     when :flag
       return [true, false].sample ? option[:value] : nil
-    when :trait
+    when :trait # TODO add check for proc here
       return option[:range].to_a.sample
     else
       fail Serinette::Error, '#stringify_option requires type of flag or trait'

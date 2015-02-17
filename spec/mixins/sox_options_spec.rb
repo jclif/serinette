@@ -23,7 +23,7 @@ describe SoxOptions do
       expect(SoxOptions.stringify_option(good_option1)).to eq('-w')
     end
 
-    it 'should return correct string when given type: :trait' do
+    it 'should return correct string when given type: :trait as range' do
       good_option2 = {
         type: :trait,
         name: 'reverberance',
@@ -36,6 +36,24 @@ describe SoxOptions do
       expect(result).not_to be_nil
       expect(result.to_i).to be_between(0, 100)
     end
+
+    it 'should return correct string when given type: :trait as array' do
+      good_option2 = {
+        type: :trait,
+        name: 'reverberance',
+        range: [0, 50, 100],
+        default: 50
+      }
+
+      allow_any_instance_of(Array).to receive(:sample).and_return(50)
+
+      result = SoxOptions.stringify_option(good_option2)
+
+      expect(result).not_to be_nil
+      expect(result.to_i).to eq(50)
+    end
+
+    it 'should return correct string when given type: :trait as proc'
 
     it 'should fail when type is bad' do
       bad_option = {

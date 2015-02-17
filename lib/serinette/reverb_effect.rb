@@ -1,9 +1,9 @@
 # Reverb type of effect
 class ReverbEffect < Effect
-  ROOT_COMMAND = 'reverb'
+  ROOT_COMMAND = 'reverb'.freeze
 
-  # Options include:
-  # [-w|--wet-only] [on - off]
+  # Sox options:
+  # -w|--wet-only [on - off]
   # reverberance (50%) [0 - 100]
   # HF-damping (50%) [0 - 100]
   # room-scale (100%) [0 - 100]
