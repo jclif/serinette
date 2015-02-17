@@ -12,4 +12,9 @@ class Noise
       Noise.descendents.sample.new
     end
   end
+
+  # Gets a key pair for a given sox effect and its args
+  def to_sox_key_pair
+    { return_root_command => generate_options }
+  end
 end

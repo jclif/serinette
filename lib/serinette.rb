@@ -1,9 +1,13 @@
+require 'securerandom'
+
 require 'byebug'
 require 'fileutils'
 require 'sox'
 
 require 'mixins/descendents'
 require 'mixins/sox_options'
+
+require 'utils/file_name'
 
 require 'serinette/effect'
 require 'serinette/reverb_effect'

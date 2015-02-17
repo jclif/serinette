@@ -35,9 +35,23 @@ module SoxOptions
     when :flag
       return [true, false].sample ? option[:value] : nil
     when :trait # TODO add check for proc here
-      return option[:range].to_a.sample
+      return process_trait(option[:range])
     else
       fail Serinette::Error, '#stringify_option requires type of flag or trait'
+    end
+  end
+
+  def self.process_trait(trait)
+    case trait
+    when Range
+      return trait.to_a.sample
+    when Array
+      return trait.sample
+    when Proc
+      return trait.call
+    else
+      fail Serinette::Error, '#process_trait requires trait of type Array,
+      Range, or Proc'
     end
   end
 end

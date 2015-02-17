@@ -44,6 +44,11 @@ class SynthNoise
       default: 'sine'
     }, {
       type: :trait,
+      name: 'combione',
+      value: %w(create mix amod fmod),
+      default: 'create'
+    }, {
+      type: :trait,
       name: 'freq',
       value: Proc.new do
         freq = ('A'..'G').to_a.product((0..10).to_a).map { |el| el.join('') }.sample
@@ -52,8 +57,23 @@ class SynthNoise
           freq << ('A'..'G').to_a.product((0..10).to_a).map { |el| el.join('') }.sample
         end
         freq
-      end
-    }, {
+      end,
+      default: 'A4'
     }
   ]
+
+  def render
+    generate_noise
+    apply_effects
+    output = FileName::generate
+    sox = Sox::Cmd.new
+    sox.add_input('-n')
+    sox.set_output(output)
+    sox.set_effects
+#     if sox.run
+  end
+
+  def apply_effects
+    # TODO init effects on noises
+  end
 end
