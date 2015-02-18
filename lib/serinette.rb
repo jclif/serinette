@@ -11,6 +11,7 @@ require 'utils/file_name'
 
 require 'serinette/effect'
 require 'serinette/reverb_effect'
+require 'serinette/compand_effect'
 
 require 'serinette/noise'
 require 'serinette/synth_noise'
