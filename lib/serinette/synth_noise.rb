@@ -1,7 +1,7 @@
 # Synthesized Noises; using arguments such as type (sin, square, saw) and will
 # describe a subclass of Noises which corresponds to the use of the synth
 # sox command
-class SynthNoise
+class SynthNoise < Noise
   ROOT_COMMAND = 'synth'.freeze
 
   # Sox options:
@@ -44,17 +44,17 @@ class SynthNoise
       default: 'sine'
     }, {
       type: :trait,
-      name: 'combione',
+      name: 'combine',
       value: %w(create mix amod fmod),
       default: 'create'
     }, {
       type: :trait,
       name: 'freq',
       value: Proc.new do
-        freq = ('A'..'G').to_a.product((0..10).to_a).map { |el| el.join('') }.sample
+        freq = ('A'..'G').to_a.product((0..9).to_a).map { |el| el.join('') }.sample
         if [true, false].sample
           freq << [':','+','/','-'].sample
-          freq << ('A'..'G').to_a.product((0..10).to_a).map { |el| el.join('') }.sample
+          freq << ('A'..'G').to_a.product((0..9).to_a).map { |el| el.join('') }.sample
         end
         freq
       end,
@@ -62,18 +62,28 @@ class SynthNoise
     }
   ]
 
-  def render
+  def initialize
+    init_effects
     generate_noise
     apply_effects
+  end
+
+  def generate_noise
     output = FileName::generate
     sox = Sox::Cmd.new
     sox.add_input('-n')
     sox.set_output(output)
-    sox.set_effects
-#     if sox.run
+    synth_string = SoxOptions::randomize_options_as_string(SOX_OPTIONS_CONFIG)
+    sox.set_effects(ROOT_COMMAND => synth_string)
+    sox.run
+    @wavefile = output
+  end
+
+  def init_effects
+    # TODO
   end
 
   def apply_effects
-    # TODO init effects on noises
+    # TODO
   end
 end

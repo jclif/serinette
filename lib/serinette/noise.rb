@@ -3,18 +3,15 @@
 class Noise
   include Descendents
 
+  attr_accessor :wavefile
+
   # Gets a specified number of Noise subclasses.
   #
   # @param num [Fixnum] Number of noises
   # @return [Array] An array of Noise subclasses
   def self.sample_noise_classes(num = 1)
     Array.new(num).map do
-      Noise.descendents.sample.new
+      Noise.descendents.sample
     end
-  end
-
-  # Gets a key pair for a given sox effect and its args
-  def to_sox_key_pair
-    { return_root_command => generate_options }
   end
 end

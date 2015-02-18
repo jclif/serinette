@@ -18,41 +18,41 @@ class ReverbEffect < Effect
     }, {
       type: :trait,
       name: 'reverberance',
-      range: (0..100),
+      value: (0..100),
       default: 50
     }, {
       type: :trait,
       name: 'HF-damping',
-      range: (0..100),
+      value: (0..100),
       default: 50
     }, {
       type: :trait,
       name: 'room-scale',
-      range: (0..100),
+      value: (0..100),
       default: 100
     }, {
       type: :trait,
       name: 'stereo-depth',
-      range: (0..100),
+      value: (0..100),
       default: 100
     }, {
       type: :trait,
       name: 'pre-delay',
-      range: (0..5),
+      value: (0..5),
       default: 0
     }, {
       type: :trait,
       name: 'wet-gain',
-      range: (-10..10),
+      value: (-10..10),
       default: 0
     }
   ]
 
   # Passes in the Effect Subclasses config to generate sox option hash
   #
-  # @return [Hash] Result of randomize_effect_options
+  # @return [String] Result of randomized string representation of options
   def generate_options
-    SoxOptions.randomize_effect_options_as_string(SOX_OPTIONS_CONFIG)
+    SoxOptions.randomize_options_as_string(SOX_OPTIONS_CONFIG)
   end
   # Sox command
   def return_root_command

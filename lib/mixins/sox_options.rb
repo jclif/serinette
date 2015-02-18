@@ -5,7 +5,7 @@ module SoxOptions
   # @param config [Array] Sox effect options config
   #
   # @return [string] Randomized effect hash to be used with Sox::Cmd.set_effects
-  def self.randomize_effect_options_as_string(configs)
+  def self.randomize_options_as_string(configs)
     configs.map do |o|
       stringify_option(o)
     end.compact.join(' ')
@@ -35,7 +35,7 @@ module SoxOptions
     when :flag
       return [true, false].sample ? option[:value] : nil
     when :trait # TODO add check for proc here
-      return process_trait(option[:range])
+      return process_trait(option[:value])
     else
       fail Serinette::Error, '#stringify_option requires type of flag or trait'
     end
@@ -50,8 +50,8 @@ module SoxOptions
     when Proc
       return trait.call
     else
-      fail Serinette::Error, '#process_trait requires trait of type Array,
-      Range, or Proc'
+      msg = '#process_trait requires trait of type Array, Range, or Proc'
+      fail Serinette::Error, msg
     end
   end
 end

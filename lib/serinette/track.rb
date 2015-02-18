@@ -10,13 +10,13 @@ class Track
   # For now, just returns the result of noises render; this will be where
   # the noise is brought in and out of the song
   def render
-    @noise.render
+    @noise.wavefile
   end
 
   private
 
   # Initializes noise
   def init_noise
-    Noise.sample_noise_classes.first
+    Noise.sample_noise_classes.first.new
   end
 end

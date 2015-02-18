@@ -40,14 +40,14 @@ module Serinette
 
   # Primary function for creating and outputing new songs
   def self.orchestrate
-    clean
-
-    sox = Sox::Cmd.new(combine: :mix)
-
-    song = Song.new
-    song.configure_command(sox)
-
-    sox.run
+#     clean
+#
+#     sox = Sox::Cmd.new(combine: :mix)
+#
+#     song = Song.new
+#     song.configure_command(sox)
+#
+#     sox.run
   end
 
   # Basic Serinette error:

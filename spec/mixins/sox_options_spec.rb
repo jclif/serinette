@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe SoxOptions do
-  context 'a method #randomize_effect_options_as_string' do
+  context 'a method #randomize_options_as_string' do
     it 'should exist' do
-      expect(SoxOptions).to respond_to(:randomize_effect_options_as_string)
+      expect(SoxOptions).to respond_to(:randomize_options_as_string)
     end
   end
 
@@ -27,7 +27,7 @@ describe SoxOptions do
       good_option2 = {
         type: :trait,
         name: 'reverberance',
-        range: (0..100),
+        value: (0..100),
         default: 50
       }
 
@@ -41,7 +41,7 @@ describe SoxOptions do
       good_option2 = {
         type: :trait,
         name: 'reverberance',
-        range: [0, 50, 100],
+        value: [0, 50, 100],
         default: 50
       }
 
