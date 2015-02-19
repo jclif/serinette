@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe SynthNoise do
-  subject(:synth_noise) { SynthNoise.new }
-
   it 'should have a constant SOX_OPTIONS_CONFIG' do
     expect(SynthNoise::SOX_OPTIONS_CONFIG.nil?).to eq(false)
   end

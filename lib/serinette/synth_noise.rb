@@ -35,8 +35,8 @@ class SynthNoise < Noise
     {
       type: :trait,
       name: 'length',
-      value: (0..10),
-      default: 0
+      value: (1..5), # cannot be zero, or will run indefinitely
+      default: 1
     }, {
       type: :trait,
       name: 'type',
@@ -74,7 +74,9 @@ class SynthNoise < Noise
     sox.add_input('-n')
     sox.set_output(output)
     synth_string = SoxOptions::randomize_options_as_string(SOX_OPTIONS_CONFIG)
-    sox.set_effects(ROOT_COMMAND => synth_string)
+    effects = Song.default_effects
+    effects.merge!(ROOT_COMMAND => synth_string)
+    sox.set_effects(effects)
     sox.run
     @wavefile = output
   end
