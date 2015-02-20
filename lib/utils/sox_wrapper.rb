@@ -22,7 +22,7 @@ module SoxWrapper
   def self.setup(options, should_run)
     options[:global_options] ||= {}
     options[:input] ||= '-n'
-    options[:output] ||= '-n'
+    options[:output] ||= FileName.generate
     options[:effects] ||= {}
 
     options[:effects].merge! Song::default_effects
