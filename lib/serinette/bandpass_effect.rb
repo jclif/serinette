@@ -1,5 +1,6 @@
 # Compand type of effect
 class BandpassEffect < Effect
+  register_exclusion(self)
   ROOT_COMMAND = 'bandpass'.freeze
 
   # Sox options:

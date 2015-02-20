@@ -3,13 +3,23 @@ class Effect
   include Descendents
   include SoxOptions
 
+  EXCLUDED_EFFECTS = []
+
+  # registers a subclass within excluded effects
+  #
+  # @param klass [effect subclass] Subclass of effect
+  # @return [nil]
+  def self.register_exclusion(klass)
+    EXCLUDED_EFFECTS << klass unless EXCLUDED_EFFECTS.include? klass
+  end
+
   # Gets a specified number of Effect subclasses.
   #
   # @param num [Fixnum] Number of effects
   # @return [Array] An array of Effect subclasses
   def self.sample_effects_classes(num)
     Array.new(num).map do
-      Effect.descendents.sample.new
+      (Effect.descendents-EXCLUDED_EFFECTS).sample.new
     end
   end
 
