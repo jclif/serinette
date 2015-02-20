@@ -35,8 +35,8 @@ class SynthNoise < Noise
     {
       type: :trait,
       name: 'length',
-      value: (0..10),
-      default: 0
+      value: (1..5), # cannot be zero, or will run indefinitely
+      default: 1
     }, {
       type: :trait,
       name: 'type',
@@ -63,24 +63,19 @@ class SynthNoise < Noise
   ]
 
   def initialize
-    init_effects
-    generate_noise
+    init_noise
     apply_effects
   end
 
-  def generate_noise
-    output = FileName::generate
-    sox = Sox::Cmd.new
-    sox.add_input('-n')
-    sox.set_output(output)
-    synth_string = SoxOptions::randomize_options_as_string(SOX_OPTIONS_CONFIG)
-    sox.set_effects(ROOT_COMMAND => synth_string)
-    sox.run
-    @wavefile = output
-  end
+  def init_noise
+    sox_options = {
+      output: FileName::generate,
+      effects: {ROOT_COMMAND => SoxOptions::randomize_options_as_string(SOX_OPTIONS_CONFIG)}
+    }
 
-  def init_effects
-    # TODO
+    SoxWrapper.generate_and_run(sox_options)
+
+    @wavefile = sox_options[:output]
   end
 
   def apply_effects

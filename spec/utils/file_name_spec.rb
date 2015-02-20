@@ -6,8 +6,11 @@ describe FileName do
       expect(FileName).to respond_to(:generate)
     end
 
-    it 'should return a random string' do
+    it 'should return a string' do
       expect(FileName.generate).to be_a String
     end
+
+    it 'should be random'
+
   end
 end

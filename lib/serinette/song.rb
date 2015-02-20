@@ -11,6 +11,10 @@ class Song
 
   attr_accessor :duration, :tracks, :effects
 
+  def self.default_effects
+    { rate: RATE, channels: CHANNELS }
+  end
+
   def initialize
     init_duration
     init_tracks
@@ -30,7 +34,7 @@ class Song
       sox.add_input(file)
     end
     sox.set_effects(generate_effects_options)
-    sox.set_output(Serinette.generate_output_path)
+    sox.set_output(Serinette.output_path)
   end
 
   private
@@ -39,7 +43,7 @@ class Song
   # key/pairs
   def generate_effects_options
     # TODO define a default hash function in serinette
-    effects_hash = { rate: RATE, channels: CHANNELS }
+    effects_hash = Song.default_effects
 
     @effects.each do |effect|
       effects_hash.merge! effect.to_sox_key_pair

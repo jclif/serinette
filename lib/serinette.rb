@@ -1,6 +1,5 @@
 require 'securerandom'
 
-require 'byebug'
 require 'fileutils'
 require 'sox'
 
@@ -8,6 +7,7 @@ require 'mixins/descendents'
 require 'mixins/sox_options'
 
 require 'utils/file_name'
+require 'utils/sox_wrapper'
 
 require 'serinette/effect'
 require 'serinette/reverb_effect'
@@ -29,7 +29,7 @@ module Serinette
   SOUND_FILE_TYPE = '.wav'
 
   # Returns pull path of output file from project root
-  def self.generate_output_path
+  def self.output_path
     Serinette::TMP_DIR +
       Serinette::OUTPUT_FILE_NAME +
       Serinette::SOUND_FILE_TYPE
@@ -42,14 +42,15 @@ module Serinette
 
   # Primary function for creating and outputing new songs
   def self.orchestrate
-#     clean
-#
-#     sox = Sox::Cmd.new(combine: :mix)
-#
-#     song = Song.new
-#     song.configure_command(sox)
-#
-#     sox.run
+    clean
+
+    sox = Sox::Cmd.new(combine: :mix)
+
+    song = Song.new
+    song.configure_command(sox)
+    puts "Running sox with: #{sox.to_s}"
+
+    sox.run
   end
 
   # Basic Serinette error:

@@ -4,9 +4,18 @@ class SourceNoise < Noise
   SOUND_DIRECTORY = './sounds/*'
 
   def initialize
+    init_wavefile
+  end
+
+  def init_wavefile
+    sox = SoxWrapper.generate_and_run input: SourceNoise.pick_random_file
+    @wavefile = sox.output.path
+  end
+
+  def self.pick_random_file
     sound_files = Dir.glob(SOUND_DIRECTORY).sort
     num = (0..sound_files.length - 1).to_a.sample
 
-    @wavefile = sound_files[num]
+    sound_files[num]
   end
 end

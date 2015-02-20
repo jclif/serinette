@@ -11,7 +11,7 @@ end
 
 group :test do
   gem 'rspec', '3.2.0'
-  gem 'coveralls', '0.7.9'
+  gem 'coveralls', '0.7.10'
   gem 'codeclimate-test-reporter', '0.4.6'
 end
 
