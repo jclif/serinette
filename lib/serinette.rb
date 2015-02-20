@@ -1,6 +1,5 @@
 require 'securerandom'
 
-require 'byebug'
 require 'fileutils'
 require 'sox'
 
@@ -8,6 +7,7 @@ require 'mixins/descendents'
 require 'mixins/sox_options'
 
 require 'utils/file_name'
+require 'utils/sox_wrapper'
 
 require 'serinette/effect'
 require 'serinette/reverb_effect'
@@ -46,6 +46,7 @@ module Serinette
 
     song = Song.new
     song.configure_command(sox)
+    puts "Running sox with: #{sox.to_s}"
 
     sox.run
   end
