@@ -4,9 +4,8 @@ gem 'bundler', '1.8.2'
 gem 'rake', '10.4.2'
 
 group :development do
-  gem 'rubocop', '0.29.1'
-  gem 'inch', '0.5.10'
-  gem 'byebug', '3.5.1'
+  gem 'rubocop', '0.29.1', require: false
+  gem 'inch', '0.5.10', require: false
 end
 
 group :test do

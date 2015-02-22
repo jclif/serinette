@@ -1,7 +1,7 @@
-require 'coveralls'
+# require 'coveralls'
 require 'codeclimate-test-reporter'
 
-Coveralls.wear!
+# Coveralls.wear!
 CodeClimate::TestReporter.start
 
 require 'serinette'
