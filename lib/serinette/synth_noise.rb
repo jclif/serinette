@@ -5,16 +5,9 @@ class SynthNoise < Noise
   ROOT_COMMAND = 'synth'.freeze
 
   # Sox options:
-  # -j KEY TODO figure out what this does; leave out for now
-  #   docs: the -j KEY option selects 'just intonation', where Key is an
-  #   integer number of semi-tones relative to A (so for ex, -9 or 3 selects the
-  #   key of C), or a note in scientific notation
   # len (0) [0 - 10] length in seconds TODO determine resonable range
   # type (sine) [sine, square, triangle, sawtooth, trapezium, exp,
   #   [white]noise, tpdfnoise pinknoise, brownnoise, pluck]
-  #   TODO add condition support in SoxOptions, such that the 'noise' type
-  #   synths can be chosen, and force some state in another option (noises cant
-  #   be swept, so freq/freq2 could not include two values)
   # combine (create) [create, mix, amod (amplitude modulation), fmod
   #   (frequency modulation)]
   # freq/freq2 (A4) [A0-G9:A0-G9] TODO expand stringify_options to allow for
@@ -26,11 +19,6 @@ class SynthNoise < Noise
   #   '/' (exp) the tone will change by a fixed number of semitones per second
   #   '-' (exp) link '/', but initial phase always zero, and stepped (rougher)
   #     frequency changes
-  # off TODO figure out what this does; leave out for now
-  # ph TODO figure out what this does; leave out for now
-  # p1 TODO figure out what this does; leave out for now
-  # p2 TODO figure out what this does; leave out for now
-  # p3 TODO figure out what this does; leave out for now
   SOX_OPTIONS_CONFIG = [
     {
       type: :trait,

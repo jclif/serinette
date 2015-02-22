@@ -42,7 +42,6 @@ class Song
   # Uses effects instance variable to generate hash of all effects as sox
   # key/pairs
   def generate_effects_options
-    # TODO define a default hash function in serinette
     effects_hash = Song.default_effects
 
     @effects.each do |effect|
