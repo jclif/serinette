@@ -5,11 +5,11 @@
 language: ruby
 rvm:
   - 1.9.3
-  - 2.0.0
-  - 2.1.0
-  - 2.2.0
-  - ruby-head
-  - jruby-head
+  # - 2.0.0
+  # - 2.1.0
+  # - 2.2.0
+  # - ruby-head
+  # - jruby-head
 notifications:
   slack:
     secure: KCr8I8N78I0wOX5Cx8nJwPMM7jEDEPHI9z2RCIaANLy+sdFkV3Jz1RAx/6F4hctVzHHDWirZ7lWjRwljuBtV31rTSga1YRInxXvreWyLorN6stZAC4ZGZG4SMqUZCeAmgKp2WdweYeRAHLOy2fW9jLeoBOFtyl8PkooHmob7isA=
