@@ -4,7 +4,8 @@ require "serinette/version"
 Gem::Specification.new do |gem|
   gem.name          = 'serinette'
   gem.version       = Serinette::VERSION
-  gem.summary       = "Generates music from the command line."
+  gem.summary       = "Random music from the command line."
+  gem.description   = "Serinette is a library with a strongly opionated approach to generating random music from the command line."
   gem.authors       = ['Jared Clifton', 'Austin Gatlin']
   gem.email         = 'jaredcraigclifton@gmail.com'
   gem.files         = `git ls-files`.split("\n")

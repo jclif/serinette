@@ -3,4 +3,5 @@ coverage
 !tmp/.gitkeep
 .inch
 .bundle
+*.gem
 Gemfile.lock
