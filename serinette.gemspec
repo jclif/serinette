@@ -1,5 +1,3 @@
-require 'serinette/version'
-
 Gem::Specification.new do |gem|
   gem.name          = 'serinette'
   gem.version       = Serinette::VERSION

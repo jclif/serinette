@@ -9,3 +9,5 @@ group :test do
   gem 'coveralls', '0.7.10'
   gem 'codeclimate-test-reporter', '0.4.6'
 end
+
+gemspec
