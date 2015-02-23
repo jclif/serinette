@@ -1,15 +1,11 @@
 require 'spec_helper'
 
-describe SynthNoise do
+describe Serinette::SynthNoise do
   it 'should have a constant SOX_OPTIONS_CONFIG' do
-    expect(SynthNoise::SOX_OPTIONS_CONFIG.nil?).to eq(false)
+    expect(Serinette::SynthNoise).to have_constant(:SOX_OPTIONS_CONFIG)
   end
 
   it 'should inherit from Noise' do
-    expect(SynthNoise.ancestors.include?(Noise)).to eq(true)
-  end
-
-  it 'should have a method #generate_noise that' do
-    expect(SynthNoise.ancestors.include?(Noise)).to eq(true)
+    expect(Serinette::SynthNoise.ancestors.include?(Serinette::Noise)).to eq(true)
   end
 end

@@ -1,6 +1,6 @@
 # [serinette](http://jclif.github.io/serinette/)
 
-Generates random electronic music from the command line.
+Generates music from the command line.
 
 [![Code Climate](https://codeclimate.com/github/jclif/serinette/badges/gpa.svg)](https://codeclimate.com/github/jclif/serinette)
 [![Build Status](https://travis-ci.org/jclif/serinette.svg?branch=master)](https://travis-ci.org/jclif/serinette)

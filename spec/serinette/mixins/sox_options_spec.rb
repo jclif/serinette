@@ -1,15 +1,15 @@
 require 'spec_helper'
 
-describe SoxOptions do
+describe Serinette::SoxOptions do
   context 'a method #randomize_options_as_string' do
     it 'should exist' do
-      expect(SoxOptions).to respond_to(:randomize_options_as_string)
+      expect(Serinette::SoxOptions).to respond_to(:randomize_options_as_string)
     end
   end
 
   context 'a method #stringify_option' do
     it 'should exist' do
-      expect(SoxOptions).to respond_to(:stringify_option)
+      expect(Serinette::SoxOptions).to respond_to(:stringify_option)
     end
 
     it 'should return correct string when given type: :flag' do
@@ -20,7 +20,7 @@ describe SoxOptions do
       }
 
       allow_any_instance_of(Array).to receive(:sample).and_return(true)
-      expect(SoxOptions.stringify_option(good_option1)).to eq('-w')
+      expect(Serinette::SoxOptions.stringify_option(good_option1)).to eq('-w')
     end
 
     it 'should return correct string when given type: :trait as range' do
@@ -31,7 +31,7 @@ describe SoxOptions do
         default: 50
       }
 
-      result = SoxOptions.stringify_option(good_option2)
+      result = Serinette::SoxOptions.stringify_option(good_option2)
 
       expect(result).not_to be_nil
       expect(result.to_i).to be_between(0, 100)
@@ -47,7 +47,7 @@ describe SoxOptions do
 
       allow_any_instance_of(Array).to receive(:sample).and_return(50)
 
-      result = SoxOptions.stringify_option(good_option2)
+      result = Serinette::SoxOptions.stringify_option(good_option2)
 
       expect(result).not_to be_nil
       expect(result.to_i).to eq(50)
@@ -63,7 +63,7 @@ describe SoxOptions do
       }
 
       error = Serinette::Error
-      expect { SoxOptions.stringify_option(bad_option) }.to raise_error(error)
+      expect { Serinette::SoxOptions.stringify_option(bad_option) }.to raise_error(error)
     end
   end
 end

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe Descendents do
-  let(:klass) { Class.new { include Descendents } }
+describe Serinette::Descendents do
+  let(:klass) { Class.new { include Serinette::Descendents } }
 
   context 'a class method #descendents' do
     it 'should exist in classes which include the module' do

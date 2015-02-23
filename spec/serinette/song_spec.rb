@@ -1,44 +1,42 @@
 require 'spec_helper'
 
-describe Song do
-  context 'The Class' do
-    it 'should have a constant called TRACK_NUMBER' do
-      expect(Song::TRACK_NUMBER).not_to be_nil
-    end
-
-    it 'should have a constant called EFFECT_NUMBER' do
-      expect(Song::EFFECT_NUMBER).not_to be_nil
-    end
-
-    it 'should have a constant called CHANNELS' do
-      expect(Song::CHANNELS).not_to be_nil
-    end
-
-    it 'should have a constant called RATE' do
-      expect(Song::RATE).not_to be_nil
-    end
+describe Serinette::Song do
+  it 'should have a constant TRACK_NUMBER' do
+    expect(Serinette::Song).to have_constant(:TRACK_NUMBER)
   end
 
-  context 'a class method #default_effects' do
+  it 'should have a constant EFFECT_NUMBER' do
+    expect(Serinette::Song).to have_constant(:EFFECT_NUMBER)
+  end
+
+  it 'should have a constant CHANNELS' do
+    expect(Serinette::Song).to have_constant(:CHANNELS)
+  end
+
+  it 'should have a constant RATE' do
+    expect(Serinette::Song).to have_constant(:RATE)
+  end
+
+  describe '.default_effects' do
     it 'should exist' do
-      expect(Song).to respond_to(:default_effects)
+      expect(Serinette::Song).to respond_to(:default_effects)
     end
 
     it 'should get output path' do
-      default_effects = { rate: Song::RATE, channels: Song::CHANNELS }
-      expect(Song.default_effects).to eq default_effects
+      default_effects = { rate: Serinette::Song::RATE, channels: Serinette::Song::CHANNELS }
+      expect(Serinette::Song.default_effects).to eq default_effects
     end
   end
 
   context 'given a song' do
-    subject(:song) { Song.new }
+    subject(:song) { Serinette::Song.new }
 
     it 'should have correct number of effects' do
-      expect(song.effects.length).to be Song::EFFECT_NUMBER
+      expect(song.effects.length).to be Serinette::Song::EFFECT_NUMBER
     end
 
     it 'should have correct number of tracks' do
-      expect(song.tracks.length).to be Song::TRACK_NUMBER
+      expect(song.tracks.length).to be Serinette::Song::TRACK_NUMBER
     end
 
     it 'should have a variable duration' do
@@ -62,9 +60,9 @@ describe Song do
     end
 
     it 'should have correct number of tracks' do
-      expect(song.tracks.length).to be Song::TRACK_NUMBER
+      expect(song.tracks.length).to be Serinette::Song::TRACK_NUMBER
       song.tracks.each do |track|
-        expect(track).to be_a Track
+        expect(track).to be_a Serinette::Track
       end
     end
 

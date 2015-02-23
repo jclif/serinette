@@ -13,7 +13,7 @@ describe Serinette do
     expect(Serinette::SOUND_FILE_TYPE).not_to be_nil
   end
 
-  context 'a class method #clean' do
+  describe '.clean' do
     it 'should exist' do
       expect(Serinette).to respond_to(:clean)
     end
@@ -26,7 +26,7 @@ describe Serinette do
     end
   end
 
-  context 'a class method #output_path' do
+  describe '.output_path' do
     it 'should exist' do
       expect(Serinette).to respond_to(:output_path)
     end
@@ -39,7 +39,7 @@ describe Serinette do
     end
   end
 
-  context 'a class method #orchestrate' do
+  describe '.orchestrate' do
     it 'should exist' do
       expect(Serinette).to respond_to(:orchestrate)
     end
