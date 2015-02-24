@@ -2,6 +2,7 @@
 
 Generates music from the command line.
 
+[![Gem Version](https://badge.fury.io/rb/serinette.svg)](http://badge.fury.io/rb/serinette)
 [![Code Climate](https://codeclimate.com/github/jclif/serinette/badges/gpa.svg)](https://codeclimate.com/github/jclif/serinette)
 [![Build Status](https://travis-ci.org/jclif/serinette.svg?branch=master)](https://travis-ci.org/jclif/serinette)
 [![Test Coverage](https://codeclimate.com/github/jclif/serinette/badges/coverage.svg)](https://codeclimate.com/github/jclif/serinette)
