@@ -8,7 +8,6 @@ Generates music from the command line.
 [![Test Coverage](https://codeclimate.com/github/jclif/serinette/badges/coverage.svg)](https://codeclimate.com/github/jclif/serinette)
 [![Dependency Status](https://gemnasium.com/jclif/serinette.svg)](https://gemnasium.com/jclif/serinette)
 [![Documentation](https://inch-ci.org/github/jclif/serinette.svg?branch=master)](https://inch-ci.org/github/jclif/serinette)
-[![Chatroom](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jclif/serinette?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Stories in Ready](https://badge.waffle.io/jclif/serinette.png?label=ready&title=Ready)](https://waffle.io/jclif/serinette)
 
 ## Installation
@@ -87,6 +86,7 @@ You can also support my work on Serinette and
 [gratipay](https://www.gratipay.com/jclif), but why would you ever want to.
 
 [![Support via Gratipay](http://img.shields.io/gratipay/jclif.svg)](https://gratipay.com/jclif/)
+[![Chatroom](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jclif/serinette?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Mailing List
 
