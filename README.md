@@ -12,27 +12,25 @@ Generates music from the command line.
 
 ## Installation
 
-Wow, what helpful installation instructions.
-
 ```
-gem install yada-yada-dont-actually-run-this-please
+gem install serinette
 ```
 
 ## Basic Usage
 
-We're not quite there yet. Get off my back, brah. It'll work something like this though:
+We're not quite there yet, butit'll work something like this:
 
 ```
 serinette orchestrate
 ```
 
-Alternatively you can pass serinette a list of amazing flags and arguments and stuff (you can't)
+Alternatively you can pass serinette a list of amazing flags and arguments and stuff (you can't yet)
 
 ```
-serinette orchestrate --wow -f me
+serinette orchestrate --wow such --options
 ```
 
-For more details check the available command-line options (none of these work at all, please just go away):
+For more details check the available command-line options (none of these work):
 
 ```
 serinette -h
@@ -47,7 +45,7 @@ Command flag              | Description
 
 ##Configuration
 
-The behavior of Serinette can be controlled via the why_are_you_still_readying_this.yml
+The behavior of Serinette can be controlled via the serinette.yml
 
 ```
 Cool: A value or something
@@ -60,12 +58,12 @@ Style:
 
 Here's a list of Serinette's core developers:
 
-* [Yours Truly](https://github.com/jclif)
+* [Jared Clifton](https://github.com/jclif)
 * [Austin Gatlin](https://github.com/aegnog)
 
 ## Logo
 
-We don't have one. Thanks for asking.
+We don't have one.
 
 If we did, it would be licensed under a
 [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/deed.en_GB).
@@ -74,8 +72,6 @@ If we did, it would be licensed under a
 
 Here's a [list](https://github.com/jclif/serinette/contributors) of
 all the people who have contributed to the development of Serinette.
-
-Thank you SOOOO much (me)!
 
 If you'd like to contribute to Serintte, please take the time to go
 through our short
@@ -86,17 +82,18 @@ You can also support my work on Serinette and
 [gratipay](https://www.gratipay.com/jclif), but why would you ever want to.
 
 [![Support via Gratipay](http://img.shields.io/gratipay/jclif.svg)](https://gratipay.com/jclif/)
+
+If you'd like to chat about Serinette, check out chatroom.
 [![Chatroom](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jclif/serinette?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Mailing List
 
 If you're interested in everything regarding Serinette development,
-I'm sorry there is nothing I can do for you. Do people use google groups for this
-[Google Group](https://groups.google.com/).
+we will soon be setting up a [google group](https://groups.google.com/), so check back in a bit.
 
 ## Freenode
 
-What's that.
+Coming soon.
 
 ## Changelog
 
