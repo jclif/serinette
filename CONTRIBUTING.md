@@ -13,7 +13,7 @@ do so.
 * Be clear, concise and precise in your description of the problem.
 * Open an issue with a descriptive title and a summary in grammatically correct,
   complete sentences.
-* Include the output of `rubocop -V`:
+* Include the output of `serinette -V`:
 * Include any relevant code to the issue summary.
 
 ## Pull requests
