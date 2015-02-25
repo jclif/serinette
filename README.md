@@ -79,9 +79,7 @@ through our short
 
 You can also support my work on Serinette and
 [all my other projects](https://github.com/jclif) via
-[gratipay](https://www.gratipay.com/jclif), but why would you ever want to.
-
-[![Support via Gratipay](http://img.shields.io/gratipay/jclif.svg)](https://gratipay.com/jclif/)
+[gratipay](https://www.gratipay.com/jclif), but why would you ever want to. [![Support via Gratipay](http://img.shields.io/gratipay/jclif.svg)](https://gratipay.com/jclif/)
 
 If you'd like to chat about Serinette, check out chatroom.
 [![Chatroom](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jclif/serinette?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
