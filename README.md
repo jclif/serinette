@@ -18,7 +18,7 @@ gem install serinette
 
 ## Basic Usage
 
-We're not quite there yet, butit'll work something like this:
+We're not quite there yet, but it'll work something like this:
 
 ```
 serinette orchestrate
