@@ -2,7 +2,7 @@ module Serinette
   # Most basic unit of sound; will eventually provide base class for many
   # different kinds of noises (SynthNoise, SourceNoise, etc)
   class Noise
-    include Descendents
+    include Mixins::Descendents
 
     attr_accessor :wavefile
 

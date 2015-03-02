@@ -9,7 +9,7 @@ module Serinette
     end
 
     def init_wavefile
-      sox = SoxWrapper.generate_and_run input: SourceNoise.pick_random_file
+      sox = Utils::SoxWrapper.generate_and_run input: SourceNoise.pick_random_file
       @wavefile = sox.output.path
     end
 

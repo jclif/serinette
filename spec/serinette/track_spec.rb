@@ -8,7 +8,7 @@ describe Serinette::Track do
       expect(track.noise).to be_a Serinette::Noise
     end
 
-    it 'should have method render that creates a tem file and returns the path' do
+    it 'should have method render that creates file and returns the path' do
       file_name = track.render
       expect(File.exist?(file_name)).to be true
     end

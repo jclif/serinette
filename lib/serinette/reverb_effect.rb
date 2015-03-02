@@ -53,7 +53,7 @@ module Serinette
     #
     # @return [String] Result of randomized string representation of options
     def generate_options
-      SoxOptions.randomize_options_as_string(SOX_OPTIONS_CONFIG)
+      Mixins::SoxOptions.randomize_options_as_string(SOX_OPTIONS_CONFIG)
     end
     # Sox command
     def return_root_command

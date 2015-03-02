@@ -1,8 +1,8 @@
 module Serinette
   # Used to get subclasses and generate sox commands
   class Effect
-    include Descendents
-    include SoxOptions
+    include Mixins::Descendents
+    include Mixins::SoxOptions
 
     # Gets a specified number of Effect subclasses.
     #

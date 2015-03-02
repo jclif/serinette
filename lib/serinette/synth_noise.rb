@@ -58,11 +58,11 @@ module Serinette
 
     def init_noise
       sox_options = {
-        output: FileName::generate,
-        effects: {ROOT_COMMAND => SoxOptions::randomize_options_as_string(SOX_OPTIONS_CONFIG)}
+        output: Utils::FileName::generate,
+        effects: {ROOT_COMMAND => Mixins::SoxOptions::randomize_options_as_string(SOX_OPTIONS_CONFIG)}
       }
 
-      SoxWrapper.generate_and_run(sox_options)
+      Utils::SoxWrapper.generate_and_run(sox_options)
 
       @wavefile = sox_options[:output]
     end
