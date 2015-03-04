@@ -2,7 +2,6 @@ require 'securerandom'
 
 require 'fileutils'
 require 'sox'
-require 'byebug'
 
 require 'serinette/utils'
 require 'serinette/mixins'
