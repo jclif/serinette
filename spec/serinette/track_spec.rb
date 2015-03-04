@@ -5,7 +5,7 @@ describe Serinette::Track do
     subject(:track) { Serinette::Track.new }
 
     it 'should have a noise' do
-      expect(track.noise).to be_a Serinette::Noise
+      expect(Serinette::Noise::NOISES).to include track.noise.class
     end
 
     it 'should have method render that creates file and returns the path' do

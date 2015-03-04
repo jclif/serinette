@@ -5,7 +5,7 @@ module Serinette
     attr_accessor :noise
 
     def initialize
-      @noise = init_noise
+      init_noise
     end
 
     # For now, just returns the result of noises render; this will be where
@@ -18,7 +18,7 @@ module Serinette
 
     # Initializes noise
     def init_noise
-      Noise.sample_noise_classes.first.new
+      @noise = Noise.sample_noises(1).first
     end
   end
 end

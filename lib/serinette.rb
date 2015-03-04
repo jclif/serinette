@@ -6,14 +6,11 @@ require 'byebug'
 
 require 'serinette/utils'
 require 'serinette/mixins'
-require 'serinette/music_theory'
+require 'serinette/music'
 
 require 'serinette/effect'
-require 'serinette/reverb_effect'
 
 require 'serinette/noise'
-require 'serinette/synth_noise'
-require 'serinette/source_noise'
 
 require 'serinette/song'
 require 'serinette/track'

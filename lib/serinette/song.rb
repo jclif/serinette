@@ -46,7 +46,7 @@ module Serinette
       effects_hash = Song.default_effects
 
       @effects.each do |effect|
-        effects_hash.merge! effect.to_sox_key_pair
+        effects_hash.merge! Effect.to_sox_key_pair(effect)
       end
 
       effects_hash
@@ -64,7 +64,7 @@ module Serinette
 
     # Initializes effects
     def init_effects
-      @effects = Effect.sample_effects_classes(1)
+      @effects = Effect.sample_effects(1)
     end
   end
 end
