@@ -3,8 +3,6 @@ require_relative 'effect/reverb'
 module Serinette
   # Used to get subclasses and generate sox commands
   module Effect
-    include Mixins::SoxOptions
-
     EFFECTS = [Reverb]
 
     # Gets a specified number of Effect subclasses.
@@ -12,9 +10,7 @@ module Serinette
     # @param num [Fixnum] Number of effects
     # @return [Array] An array of Effect subclasses
     def self.sample_effects(num = 1)
-      Array.new(num).map do
-        EFFECTS.sample.new
-      end
+      Array.new(num).map { EFFECTS.sample.new }
     end
 
     # Gets a key pair for a given sox effect and its args

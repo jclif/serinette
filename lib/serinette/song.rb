@@ -1,6 +1,6 @@
 module Serinette
-  # Has functions for kicking off initializer chain, rendering final song, and
-  # constants necessary for determining song-level characteristcs
+  # Contains functions for kicking off initializer chain, rendering final song,
+  # and constants necessary for determining song-level characteristcs
   class Song
     LOWEST_DURATION  = 60
     HIGHEST_DURATION = 180
@@ -12,6 +12,7 @@ module Serinette
 
     attr_accessor :duration, :tracks, :effects
 
+    # Gets the options necessary for all sox effects
     def self.default_effects
       { rate: RATE, channels: CHANNELS }
     end

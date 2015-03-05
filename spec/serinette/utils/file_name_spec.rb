@@ -15,12 +15,11 @@ describe Serinette::Utils::FileName do
       allow(SecureRandom).to receive(:uuid).and_return(uuid)
 
       filename = Serinette::Utils::FileName.generate
-      # TODO how do you interpolate regex (for filename match)
+      # TODO: how do you interpolate regex (for filename match)
       regex = /\/(?<uuid>[a-z0-9-]+)\.wav$/i
       match = filename.match(regex)
 
       expect(match['uuid']).to eq uuid
     end
-
   end
 end

@@ -1,5 +1,6 @@
 module Serinette
   module Effect
+    # Reverb Effect
     class Reverb
       ROOT_COMMAND = 'reverb'.freeze
 
@@ -9,8 +10,8 @@ module Serinette
       # HF-damping (50%) [0 - 100]
       # room-scale (100%) [0 - 100]
       # stereo-depth (100%) [0 - 100]
-      # pre-delay (0ms) [0] TODO dtermine max pre-delay
-      # wet-gain (0dB) [-10 - 10] TODO dB range
+      # pre-delay (0ms) [0] TODO: dtermine max pre-delay
+      # wet-gain (0dB) [-10 - 10] TODO: dB range
       SOX_OPTIONS_CONFIG = [
         {
           type: :flag,
@@ -55,7 +56,8 @@ module Serinette
       def generate_options
         Mixins::SoxOptions.randomize_options_as_string(SOX_OPTIONS_CONFIG)
       end
-      # Sox command
+
+      # The room of the sox command
       def return_root_command
         ROOT_COMMAND
       end

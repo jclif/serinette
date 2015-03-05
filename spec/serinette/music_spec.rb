@@ -10,6 +10,5 @@ describe Serinette::Music do
       allow_any_instance_of(Array).to receive(:sample).and_return('A4')
       expect(Serinette::Music.random_note).to eq 'A4'
     end
-
   end
 end

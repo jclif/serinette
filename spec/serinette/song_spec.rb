@@ -23,8 +23,8 @@ describe Serinette::Song do
     end
 
     it 'should get output path' do
-      default_effects = { rate: Serinette::Song::RATE, channels: Serinette::Song::CHANNELS }
-      expect(Serinette::Song.default_effects).to eq default_effects
+      de = { rate: Serinette::Song::RATE, channels: Serinette::Song::CHANNELS }
+      expect(Serinette::Song.default_effects).to eq de
     end
   end
 

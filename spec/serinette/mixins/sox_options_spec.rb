@@ -3,7 +3,8 @@ require 'spec_helper'
 describe Serinette::Mixins::SoxOptions do
   context 'a method #randomize_options_as_string' do
     it 'should exist' do
-      expect(Serinette::Mixins::SoxOptions).to respond_to(:randomize_options_as_string)
+      func_name = :randomize_options_as_string
+      expect(Serinette::Mixins::SoxOptions).to respond_to(func_name)
     end
   end
 
@@ -20,7 +21,8 @@ describe Serinette::Mixins::SoxOptions do
       }
 
       allow_any_instance_of(Array).to receive(:sample).and_return(true)
-      expect(Serinette::Mixins::SoxOptions.stringify_option(good_option1)).to eq('-w')
+      o_string = Serinette::Mixins::SoxOptions.stringify_option(good_option1)
+      expect(o_string).to eq('-w')
     end
 
     it 'should return correct string when given type: :trait as range' do
@@ -57,9 +59,7 @@ describe Serinette::Mixins::SoxOptions do
       good_option = {
         type: :trait,
         name: 'reverberance',
-        value: Proc.new do
-          ['A2', 'A3', 'A4'].sample
-        end,
+        value: proc { %w('A2', 'A3', 'A4').sample },
         default: 'A4'
       }
 
@@ -79,7 +79,10 @@ describe Serinette::Mixins::SoxOptions do
       }
 
       error = Serinette::Error
-      expect { Serinette::Mixins::SoxOptions.stringify_option(bad_option) }.to raise_error(error)
+      bad_call = proc do
+        Serinette::Mixins::SoxOptions.stringify_option(bad_option)
+      end
+      expect { bad_call.yield }.to raise_error(error)
     end
   end
 end

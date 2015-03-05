@@ -5,3 +5,6 @@ coverage
 .bundle
 *.gem
 Gemfile.lock
+
+doc
+.yardoc
