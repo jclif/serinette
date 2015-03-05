@@ -8,9 +8,7 @@ module Serinette
       #
       # @return [string] To be used with Sox::Cmd.set_effects
       def self.randomize_options_as_string(configs)
-        configs.map do |o|
-          stringify_option(o)
-        end.compact.join(' ')
+        configs.map { |o| stringify_option(o) }.compact.join(' ')
       end
 
       # Takes an individual option and checks for type, (if flag, its either on
