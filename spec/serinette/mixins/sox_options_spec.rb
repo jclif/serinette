@@ -84,5 +84,19 @@ describe Serinette::Mixins::SoxOptions do
       end
       expect { bad_call.yield }.to raise_error(error)
     end
+
+    it 'should fail when type is ok but value is bad' do
+      bad_option = {
+        type: :trait,
+        value: Hash.new,
+        value: '-w'
+      }
+
+      error = Serinette::Error
+      bad_call = proc do
+        Serinette::Mixins::SoxOptions.stringify_option(bad_option)
+      end
+      expect { bad_call.yield }.to raise_error(error)
+    end
   end
 end
