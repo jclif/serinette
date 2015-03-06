@@ -4,7 +4,7 @@ describe Serinette::CLI do
   let(:argument_error) { Thor::RequiredArgumentMissingError }
 
   it 'should throw error when invalid command is given' do
-    expect { Serinette::CLI.new.invoke :not_valid }.to raise_error(argument_error)
+    expect { Serinette::CLI.new.invoke :invalid }.to raise_error(argument_error)
   end
 
   it 'should run valid command' do

@@ -86,10 +86,11 @@ describe Serinette::Mixins::SoxOptions do
     end
 
     it 'should fail when type is ok but value is bad' do
+      class BadValue; end
+
       bad_option = {
         type: :trait,
-        value: Hash.new,
-        value: '-w'
+        value: BadValue.new
       }
 
       error = Serinette::Error
