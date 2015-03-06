@@ -8,3 +8,5 @@ Gemfile.lock
 
 doc
 .yardoc
+
+spec/dev/*
