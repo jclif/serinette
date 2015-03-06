@@ -22,8 +22,9 @@ Gem::Specification.new do |g|
 
   g.required_ruby_version = '>= 1.9.3'
 
-  g.add_dependency 'cliver', '0.3.2'
+  g.add_dependency 'cliver',   '0.3.2'
   g.add_dependency 'ruby-sox', '0.0.3'
-  g.add_dependency 'rake', '10.4.2'
-  g.add_dependency 'rspec', '3.2.0'
+  g.add_dependency 'rake',     '10.4.2'
+  g.add_dependency 'rspec',    '3.2.0'
+  g.add_dependency 'thor',     '0.19.1'
 end

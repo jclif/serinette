@@ -2,6 +2,9 @@ require 'securerandom'
 
 require 'fileutils'
 require 'sox'
+require 'thor'
+
+require 'serinette/cli'
 
 require 'serinette/utils'
 require 'serinette/mixins'
