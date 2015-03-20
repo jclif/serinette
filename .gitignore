@@ -9,4 +9,4 @@ Gemfile.lock
 doc
 .yardoc
 
-spec/dev/*
+spec/dev/log.txt
