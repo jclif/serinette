@@ -6,8 +6,8 @@ group :development do
 end
 
 group :test do
-  gem 'coveralls', '0.7.10'
-  gem 'codeclimate-test-reporter', '0.4.6'
+  gem 'coveralls', '0.7.11'
+  gem 'codeclimate-test-reporter', '0.4.7'
 end
 
 gemspec

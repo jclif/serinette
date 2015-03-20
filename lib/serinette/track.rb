@@ -2,16 +2,12 @@ module Serinette
   # Contains noise, efects on noise, and when (timestamps) and
   # how (volume) noise is played
   class Track
-    attr_accessor :noise
+    attr_accessor :noise, :key, :wavefile
 
-    def initialize
+    def initialize(key)
       init_noise
-    end
-
-    # For now, just returns the result of noises render; this will be where
-    # the noise is brought in and out of the song
-    def render
-      @noise.wavefile
+      @key = key
+      render
     end
 
     private
@@ -19,6 +15,11 @@ module Serinette
     # Initializes noise
     def init_noise
       @noise = Noise.sample_noises(1).first
+    end
+
+    # For now, just gets the wavefile from its noise
+    def render
+      @wavefile = @noise.wavefile
     end
   end
 end

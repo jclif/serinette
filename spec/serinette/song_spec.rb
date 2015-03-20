@@ -66,12 +66,8 @@ describe Serinette::Song do
       end
     end
 
-    it 'should call render on all tracks' do
-      song.tracks.each do |track|
-        expect(track).to receive(:render)
-      end
-
-      song.render
+    it 'should have a key' do
+      expect(song.key).to be_a Serinette::Music::Theory::Key
     end
   end
 end

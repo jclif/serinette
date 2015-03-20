@@ -13,10 +13,7 @@ module Serinette
 
       # Initialize wavefile
       def init_wavefile
-        options = {
-          input: Source.pick_random_file,
-          run: true
-        }
+        options = { input: Source.pick_random_file, run: true }
         sox = Utils::SoxWrapper.generate options
         @wavefile = sox.output.path
       end

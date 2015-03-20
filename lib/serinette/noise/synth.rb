@@ -45,10 +45,10 @@ module Serinette
           type: :trait,
           name: 'freq',
           value: proc do
-            freq = Music.random_note
+            freq = Music.random_note(notation: :scientific)
             if [true, false].sample
               freq << %w(: + / -).sample
-              freq << Music.random_note
+              freq << Music.random_note(notation: :scientific)
             end
             freq
           end,
